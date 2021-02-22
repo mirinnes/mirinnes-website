@@ -1,0 +1,2 @@
+export const INTRO_TOGGLE_DISPLAY = 'INTRO_TOGGLE_DISPLAY';
+export const SET_LOADING = 'SET_LOADING';

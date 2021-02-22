@@ -1,25 +1,8 @@
-import React, { useState } from 'react';
-import UNI_GIF from './XZ5V.gif';
+import React, { useState, useContext } from 'react';
+import mirinnesContext from '../../context/mirinnesContext';
+import UNI_GIF from '../../assets/XZ5V.gif';
 import './eye.scss';
-import './home.scss';
-// HTMLElement.prototype.pseudoStyle = function (element, prop, value) {
-// 	var _this = this;
-// 	let oldPseudoStyle = document.getElementById('pseudoStyles');
-// 	console.log('oldPseudoStyle', oldPseudoStyle);
-// 	var _head = document.head || document.getElementsByTagName('head')[0];
-// 	if (oldPseudoStyle) _head.removeChild(oldPseudoStyle);
-// 	var _sheetId = 'pseudoStyles';
-// 	var _sheet = document.createElement('style');
-// 	_sheet.id = _sheetId;
-// 	var className = 'eye';
-
-// 	_this.className += ' ' + className;
-
-// 	_sheet.innerHTML +=
-// 		' .' + className + ':' + element + '{' + prop + ':' + value + '}';
-// 	_head.appendChild(_sheet);
-// 	return this;
-// };
+import '../../pages/home/home.scss';
 
 function Eyeball() {
 	// State
@@ -27,8 +10,10 @@ function Eyeball() {
 	const [irisPos, setIrisPos] = useState({ x: '0px', y: '0px' });
 	const [op, setOp] = useState(0);
 	const [isEyeAnim, setisEyeAnim] = useState(false);
-	const [displayIntro, setDisplayIntro] = useState(true);
 	const [displayEyeDesign, setDisplayEyeDesign] = useState(true);
+
+	// Context
+	const { toggleDisplayIntro } = useContext(mirinnesContext);
 
 	// Gets
 	const getMousePosition = (e) => {
@@ -103,8 +88,8 @@ function Eyeball() {
 		setisEyeAnim(!isEyeAnim);
 		setDisplayEyeDesign(!displayEyeDesign);
 		setTimeout(() => {
-			setDisplayIntro(!displayIntro);
-		}, 1000);
+			toggleDisplayIntro();
+		}, 500);
 	};
 	const handleOnMouseEnterEye = (e) => {
 		let eyeCen = getEyeCenter();
@@ -122,8 +107,7 @@ function Eyeball() {
 		setIrisOp(1);
 	};
 
-	// TODO Make the correct React.Router implementation in order to put all this events in the Appstate
-	return displayIntro ? (
+	return (
 		<div
 			onMouseMove={(e) => handleOnMouseMove(e)}
 			onClick={(e) => handleOnClick(e)}
@@ -136,12 +120,9 @@ function Eyeball() {
 				></div>
 				<div
 					id='eye'
-					className='eye'
+					className={`eye ${isEyeAnim ? 'animate' : ''}`}
 					onMouseEnter={(e) => handleOnMouseEnterEye(e)}
 					onMouseLeave={() => handleOnMouseLeave()}
-					style={{
-						animation: `${isEyeAnim ? 'scale 2s ease-in forwards' : ''}`,
-					}}
 				>
 					<div className='wonder' style={{ opacity: op }}>
 						{displayEyeDesign && <img src={UNI_GIF} alt='uni' />}
@@ -152,12 +133,6 @@ function Eyeball() {
 						style={{ left: irisPos.x, top: irisPos.y, opacity: irisOp }}
 					></div>
 				</div>
-			</div>
-		</div>
-	) : (
-		<div className='main'>
-			<div className='logo-mirinnes' href='#' onClick={(e) => handleOnClick(e)}>
-				<h1 className='title-mirinnes'>Mirinnes</h1>
 			</div>
 		</div>
 	);

@@ -29,10 +29,11 @@ function Home() {
 			<div
 				style={dynamicClipPath(circleCenter.x, circleCenter.y)}
 				className='bg'
-			/>
-			<button onClick={() => handleOnClickLights()} className='btn-light'>
-				Lights ON!
-			</button>
+			>
+				<button onClick={() => handleOnClickLights()} className='btn-light'>
+					Lights ON!
+				</button>
+			</div>
 		</section>
 	);
 }

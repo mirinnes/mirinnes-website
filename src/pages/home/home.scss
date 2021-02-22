@@ -16,5 +16,16 @@
 	}
 	.btn-light {
 		position: absolute;
+		position: absolute;
+		bottom: 20%;
+		right: 23%;
+		border-radius: 50%;
+		background-color: #111;
+		color: #fff;
+		padding: 0.5em;
+		&:focus,
+		&:active {
+			outline: none;
+		}
 	}
 }

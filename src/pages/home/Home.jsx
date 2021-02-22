@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ArtPortrait from '../../components/art-object/ArtPortrait';
 import './home.scss';
 function Home() {
 	const [circleCenter, setCircleCenter] = useState({ x: '50%', y: '50%' });
@@ -30,9 +31,15 @@ function Home() {
 				style={dynamicClipPath(circleCenter.x, circleCenter.y)}
 				className='bg'
 			>
-				<button onClick={() => handleOnClickLights()} className='btn-light'>
-					Lights ON!
-				</button>
+				<ArtPortrait />
+				<div className='presentation'>
+					<h2>Hola soy Miri!</h2>
+					<p>Esta es un poquito mi cabeza...</p>
+				</div>
+				<button
+					onClick={() => handleOnClickLights()}
+					className='btn-light'
+				></button>
 			</div>
 		</section>
 	);

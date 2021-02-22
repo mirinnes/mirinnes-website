@@ -5,8 +5,18 @@
 	height: 100vh;
 	width: 100vw;
 	background-color: #111;
+	.presentation {
+		display: flex;
+		flex-direction: column;
+		text-transform: uppercase;
+		text-align: center;
+		position: absolute;
+		right: 23%;
+		top: 10%;
+		width: 12vw;
+	}
 	.bg {
-		background: url('../../assets/bg.jpg');
+		background: url('../../assets/bg2.jpg');
 		height: 100vh;
 		width: 100vw;
 		background-size: cover;
@@ -16,13 +26,13 @@
 	}
 	.btn-light {
 		position: absolute;
-		position: absolute;
 		bottom: 20%;
-		right: 23%;
+		right: 29%;
 		border-radius: 50%;
-		background-color: #111;
+		background-color: #aaa;
 		color: #fff;
 		padding: 0.5em;
+		cursor: pointer;
 		&:focus,
 		&:active {
 			outline: none;

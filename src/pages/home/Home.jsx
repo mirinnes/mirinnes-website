@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './home.scss';
 function Home() {
 	const [circleCenter, setCircleCenter] = useState({ x: '50%', y: '50%' });
-	const [lights, setLights] = useState(false);
+	const [lights, setLights] = useState(true);
 	const getMousePosition = (e) => {
 		return { x: e.clientX, y: e.clientY };
 	};

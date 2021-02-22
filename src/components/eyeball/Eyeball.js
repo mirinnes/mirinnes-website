@@ -108,12 +108,12 @@ function Eyeball() {
 	};
 
 	return (
-		<div
-			onMouseMove={(e) => handleOnMouseMove(e)}
-			onClick={(e) => handleOnClick(e)}
-			className='eye-movetrack'
-		>
-			<div id='eye-container' className='eye-container'>
+		<div onMouseMove={(e) => handleOnMouseMove(e)} className='eye-movetrack'>
+			<div
+				id='eye-container'
+				onClick={(e) => handleOnClick(e)}
+				className='eye-container'
+			>
 				<div
 					className='eye-shadow'
 					style={{ opacity: `${displayEyeDesign ? 1 : 0}` }}

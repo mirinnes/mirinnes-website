@@ -127,11 +127,13 @@ function Eyeball() {
 					<div className='wonder' style={{ opacity: op }}>
 						{displayEyeDesign && <img src={UNI_GIF} alt='uni' />}
 					</div>
-					<div
-						id='iris'
-						className='iris'
-						style={{ left: irisPos.x, top: irisPos.y, opacity: irisOp }}
-					></div>
+					{displayEyeDesign && (
+						<div
+							id='iris'
+							className='iris'
+							style={{ left: irisPos.x, top: irisPos.y, opacity: irisOp }}
+						></div>
+					)}
 				</div>
 			</div>
 		</div>

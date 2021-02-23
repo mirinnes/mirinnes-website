@@ -53,8 +53,8 @@ function Home() {
 	};
 	return (
 		<section className='Home' onMouseMove={(e) => handleOnMouseMove(e)}>
-			<LeafA />
-			<LampWheel />
+			{!lights && <LeafA />}
+			{!lights && <LampWheel />}
 
 			<div
 				style={dynamicCircleClipPath(circleCenter.x, circleCenter.y)}

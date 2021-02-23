@@ -13,7 +13,7 @@ function Eyeball() {
 	const [displayEyeDesign, setDisplayEyeDesign] = useState(true);
 
 	// Context
-	const { toggleDisplayIntro } = useContext(mirinnesContext);
+	const { toggleDisplayIntro, displayIntro } = useContext(mirinnesContext);
 
 	// Gets
 	const getMousePosition = (e) => {
@@ -69,22 +69,26 @@ function Eyeball() {
 
 	// Handlers
 	const handleOnMouseMove = (e) => {
-		let ar = getAspectRatio();
-		let eyeDim = getEyeDimensions();
-		let eyeCen = getEyeCenter();
-		let irisDim = getIrisDimensions();
-		let mousePos = getMousePosition(e);
-		let r = getRadiusDistance(e);
-		let vpD = getViewPortDiagonal(ar, eyeCen);
-		let rx = (eyeDim.w - irisDim.w) / ar.w;
-		let ry = (eyeDim.h - irisDim.h) / ar.h;
-		let x = rx * mousePos.x;
-		let y = ry * mousePos.y;
-		let newOp = 1 - (10 * r) / vpD;
-		let posX = x + 'px';
-		let posY = y + 'px';
-		setOp(newOp);
-		setIrisPos({ x: posX, y: posY });
+		if (displayIntro) {
+			let ar = getAspectRatio();
+			let eyeDim = getEyeDimensions();
+			let eyeCen = getEyeCenter();
+			let irisDim = getIrisDimensions();
+			let mousePos = getMousePosition(e);
+			let r = getRadiusDistance(e);
+			let vpD = getViewPortDiagonal(ar, eyeCen);
+			let rx = (eyeDim.w - irisDim.w) / ar.w;
+			let ry = (eyeDim.h - irisDim.h) / ar.h;
+			let x = rx * mousePos.x;
+			let y = ry * mousePos.y;
+			let newOp = 1 - (10 * r) / vpD;
+			let posX = x + 'px';
+			let posY = y + 'px';
+			setOp(newOp);
+			setIrisPos({ x: posX, y: posY });
+		} else {
+			return null;
+		}
 	};
 	const handleOnClick = (e) => {
 		setisEyeAnim(!isEyeAnim);

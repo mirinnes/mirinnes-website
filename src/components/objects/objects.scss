@@ -1,0 +1,151 @@
+@import '../../abstract/mixins';
+@import '../../abstract/constants';
+
+.object {
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.1, 0.1, 0.1, 0.1);
+	&.interactive {
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	&.artPortrait {
+		background-image: url($portrait);
+		@include createIcon(170px, 287px);
+		@include absolutePosTL(2em, 24em);
+	}
+
+	&.bookInfo {
+		background-image: url($bookInfo);
+		@include createIcon(74px, 106px);
+		@include absolutePosTL(12em, 35em);
+	}
+	&.bookMaths {
+		background-image: url($bookMaths);
+		@include createIcon(45px, 84px);
+		@include absolutePosTL(14em, 34.5em);
+	}
+	&.bookPhysics {
+		background-image: url($bookPhysics);
+		@include createIcon(56px, 95px);
+		@include absolutePosTL(14em, 32em);
+	}
+	&.chair {
+		background-image: url($chair);
+		@include createIcon(252px, 250px);
+		@include absolutePosTL(29em, 32em);
+	}
+	&.computer {
+		background-image: url($computer);
+		@include createIcon(116px, 115px);
+		@include absolutePosTL(10em, 39em);
+	}
+	&.desktopA {
+		background-image: url($desktopA);
+		@include createIcon(555px, 360px);
+		@include absolutePosTL(14em, 20em);
+	}
+	&.desktopB {
+		background-image: url($desktopB);
+		@include createIcon(664px, 526px);
+		@include absolutePosTL(14em, 47em);
+	}
+	&.firmaMirinnes {
+		background-image: url($firma);
+		@include createIcon(118px, 65px);
+		@include absolutePosTL(31em, 57em);
+		transform: rotate(29deg);
+		&:hover {
+			transform: scale(1.2) rotate(29deg);
+		}
+	}
+	&.frog {
+		background-image: url($frog);
+		@include createIcon(63px, 69px);
+		@include absolutePosTL(5em, 51em);
+	}
+	&.jack {
+		background-image: url($jack);
+		@include createIcon(46px, 80px);
+		@include absolutePosTL(3em, 43.5em);
+		&:hover {
+			top: 3.5em;
+			left: 43em;
+		}
+	}
+	&.lamp {
+		background-image: url($lamp);
+		@include createIcon(156px, 202px);
+		@include absolutePosTL(16em, 66em);
+		transform: rotate(14deg);
+	}
+	&.lampWheel {
+		background-image: url($lampWheel);
+		@include createIcon(108px, 103px);
+		@include absolutePosTL(16em, 75em);
+	}
+	&.leafA {
+		background-image: url($leafA);
+		@include createIcon(168px, 213px);
+		@include absolutePosTL(11em, 10em);
+	}
+	&.leafB {
+		background-image: url($leafB);
+		@include createIcon(144px, 145px);
+		@include absolutePosTL(17em, 20em);
+		transform: rotate(9deg);
+	}
+	&.leafC {
+		background-image: url($leafC);
+		@include createIcon(114px, 250px);
+		@include absolutePosTL(8em, 20em);
+	}
+	&.lightBox {
+		background-image: url($lightBox);
+		@include createIcon(50px, 42px);
+		@include absolutePosTL(35em, 66em);
+	}
+	&.littleChair {
+		background-image: url($littleChair);
+		@include createIcon(153px, 201px);
+		@include absolutePosTL(26.5em, 16em);
+	}
+	&.mouseKeyboard {
+		background-image: url($mousekey);
+		@include createIcon(177px, 60px);
+		@include absolutePosTL(15em, 40em);
+	}
+	&.pencil {
+		background-image: url($pencil);
+		@include createIcon(160px, 35px);
+		@include absolutePosTL(26em, 53em);
+	}
+	&.plantBox {
+		background-image: url($plantBox);
+		@include createIcon(106px, 102px);
+		@include absolutePosTL(22em, 17em);
+	}
+	&.sheet {
+		background-image: url($sheet);
+		@include createIcon(356px, 308px);
+		@include absolutePosTL(19em, 54em);
+	}
+	&.tetera {
+		background-image: url($tetera);
+		@include createIcon(65px, 41px);
+		@include absolutePosTL(5.5em, 45em);
+	}
+	&.wheel {
+		background-image: url($wheel);
+		@include createIcon(217px, 250px);
+		@include absolutePosTL(21em, 68em);
+	}
+	&.window {
+		background-image: url($window);
+		@include createIcon(213px, 112px);
+		@include absolutePosTL(2.1em, 43em);
+	}
+}

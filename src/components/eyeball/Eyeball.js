@@ -37,11 +37,13 @@ function Eyeball() {
 	};
 	const getIrisDimensions = () => {
 		const iris = document.getElementById('iris');
-
-		return {
-			w: iris.offsetWidth,
-			h: iris.offsetHeight,
-		};
+		if (iris) {
+			return {
+				w: iris.offsetWidth,
+				h: iris.offsetHeight,
+			};
+		}
+		return null;
 	};
 	const getAspectRatio = () => {
 		if (window.innerWidth) {

@@ -1,0 +1,11 @@
+@mixin createIcon($width, $height) {
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: $width;
+	height: $height;
+}
+
+@mixin absolutePosTL($top, $left) {
+	top: $top;
+	left: $left;
+}

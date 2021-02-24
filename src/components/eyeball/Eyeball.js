@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import mirinnesContext from '../../context/mirinnesContext';
 import UNI_GIF from '../../assets/XZ5V.gif';
+
+// import Wonder from '../wonder/Wonder';
 import './eye.scss';
 import '../../pages/home/home.scss';
 
@@ -130,9 +132,11 @@ function Eyeball() {
 					onMouseEnter={(e) => handleOnMouseEnterEye(e)}
 					onMouseLeave={() => handleOnMouseLeave()}
 				>
-					<div className='wonder' style={{ opacity: op }}>
-						{displayEyeDesign && <img src={UNI_GIF} alt='uni' />}
+					<div className='wonder' style={{ opacity: `${op}` }}>
+						<img src={UNI_GIF} alt='uni' />
 					</div>
+					{/* {displayEyeDesign && <Wonder opacity={op} />} */}
+
 					{displayEyeDesign && (
 						<div
 							id='iris'

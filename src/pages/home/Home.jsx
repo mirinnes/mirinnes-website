@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Wonder from '../../components/wonder/Wonder';
 import ArtPortrait from '../../components/objects/ArtPortrait';
 import BookInfo from '../../components/objects/BookInfo';
 import BookMaths from '../../components/objects/BookMaths';
@@ -29,7 +30,7 @@ import './home.scss';
 
 function Home() {
 	const [circleCenter, setCircleCenter] = useState({ x: '50%', y: '50%' });
-	const [lights, setLights] = useState(true);
+	const [lightsOff, setLights] = useState(true);
 	const getMousePosition = (e) => {
 		return { x: e.clientX, y: e.clientY };
 	};
@@ -41,35 +42,40 @@ function Home() {
 		setCircleCenter({ x: nX, y: nY });
 	};
 	const handleOnClickLights = () => {
-		setLights(!lights);
+		setLights(!lightsOff);
 	};
 
 	const dynamicCircleClipPath = (posX, posY) => {
-		if (lights) {
+		if (lightsOff) {
 			return { clipPath: `circle(10% at ${posX} ${posY}` };
 		} else {
 			return null;
 		}
 	};
+
+	const introText = lightsOff
+		? 'We need to turn on some lightsOff here...'
+		: 'Welcome to my headspace!';
 	return (
 		<section className='Home' onMouseMove={(e) => handleOnMouseMove(e)}>
-			{!lights && <LeafA />}
-			{!lights && <LampWheel />}
+			{!lightsOff && <LeafA />}
+			{!lightsOff && <LampWheel />}
 
 			<div
 				style={dynamicCircleClipPath(circleCenter.x, circleCenter.y)}
 				className='bg'
 			>
+				<div className='wall'></div>
 				<div className='floor'></div>
-
+				<Wonder />
 				<Window />
 				<DesktopA />
 				<ArtPortrait />
+				<Computer />
 				<BookInfo />
 				<BookMaths />
 				<BookPhysics />
 				<Chair />
-				<Computer />
 				<DesktopB />
 				<Frog />
 				<Tetera />
@@ -86,14 +92,16 @@ function Home() {
 				<PlantBox />
 				<Pencil />
 				<FirmaMirinnes />
+				{!lightsOff && <div className='light'></div>}
+
 				<Lamp />
 				<div className='text'>
 					<h2>Hola soy Miri!</h2>
-					<p>Esta es un poquito mi cabeza...</p>
+					<p>{introText}</p>
 				</div>
 				<button
 					onClick={() => handleOnClickLights()}
-					className='btn-light'
+					className={`btn-light ${lightsOff ? 'off' : ''}`}
 				></button>
 			</div>
 		</section>

@@ -4,9 +4,9 @@
 .object {
 	display: inline-block;
 	position: absolute;
-	cursor: pointer;
 	transition: all 0.3s cubic-bezier(0.1, 0.1, 0.1, 0.1);
 	&.interactive {
+		cursor: pointer;
 		&:hover {
 			transform: scale(1.2);
 		}
@@ -80,7 +80,7 @@
 		background-image: url($lamp);
 		@include createIcon(156px, 202px);
 		@include absolutePosTL(16em, 66em);
-		transform: rotate(14deg);
+		transform: rotate(9deg);
 	}
 	&.lampWheel {
 		background-image: url($lampWheel);

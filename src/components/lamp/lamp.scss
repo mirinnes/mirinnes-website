@@ -1,0 +1,35 @@
+.line1,
+.line2 {
+  position: absolute;
+  z-index: 1;
+}
+.line1 {
+  right: 30%;
+}
+
+.line2 {
+  right: 26%;
+}
+.switch {
+  position: absolute;
+  right: 23%;
+  top: 80%;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  z-index: 1;
+  display: inline-block;
+}
+.lamp {
+  position: absolute;
+  right: 23%;
+  top: 45%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom: 33px solid black;
+  z-index: 1;
+  background-color: white;
+  width: 14rem;
+  height: 7rem;
+  display: inline-block;
+}

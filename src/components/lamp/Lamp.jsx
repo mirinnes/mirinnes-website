@@ -3,42 +3,58 @@ import './lamp.scss';
 function Lamp({ onClickSwitch }) {
   return (
     <>
-      <svg
-        width='25'
-        height='450'
-        viewBox='0 0 20 800'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-        className='line1'
-      >
-        <line
-          x1='50%'
-          y1='0'
-          x2='50%'
-          y2='76%'
-          stroke='white'
-          stroke-width='10'
-        />
-      </svg>
-      <svg
-        width='25'
-        height='450'
-        viewBox='0 0 20 800'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-        className='line2'
-      >
-        <line
-          x1='50%'
-          y1='80%'
-          x2='50%'
-          y2='100%'
-          stroke='white'
-          stroke-width='10'
-        />
-      </svg>
-      <span className='switch'></span>
-      <span onClick={() => onClickSwitch()} className='lamp'></span>
+      <div className='bulb'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          version='1.1'
+          width='512'
+          height='512'
+          x='0'
+          y='0'
+          viewBox='0 0 512 512'
+          style={{ enableBackground: `new 0 0 512 512` }}
+        >
+          <g transform='matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,511.9998321533204,511.99999999999994)'>
+            <path
+              xmlns='http://www.w3.org/2000/svg'
+              d='M256.011,16H256A160.035,160.035,0,0,0,117.132,255.516a161.029,161.029,0,0,0,55.644,57.149A23.857,23.857,0,0,1,184,332.98v4.4A23.977,23.977,0,0,0,174.131,376a23.943,23.943,0,0,0,0,32A23.977,23.977,0,0,0,184,446.624V456a40.045,40.045,0,0,0,40,40h64a40.045,40.045,0,0,0,40-40v-9.376A23.977,23.977,0,0,0,337.869,408a23.943,23.943,0,0,0,0-32A23.977,23.977,0,0,0,328,337.376v-4.4a23.955,23.955,0,0,1,11.568-20.523A159.891,159.891,0,0,0,416,176C416,87.782,344.229,16.006,256.011,16Z'
+              data-original='#000000'
+              stroke='red'
+              stroke-linecap='round'
+              className='metal-bulb'
+              stroke-width='5'
+            />
+            <path
+              xmlns='http://www.w3.org/2000/svg'
+              d='M256.011,16H256A160.035,160.035,0,0,0,117.132,255.516a161.029,161.029,0,0,0,55.644,57.149A23.857,23.857,0,0,1,184,332.98v4.4h144v-4.4a23.955,23.955,0,0,1,11.568-20.523A159.891,159.891,0,0,0,416,176C416,87.782,344.229,16.006,256.011,16Z'
+              stroke='blue'
+              className='dash-movement'
+              stroke-width='5'
+              stroke-linecap='round'
+              data-original='#000000'
+            />
+            <path
+              xmlns='http://www.w3.org/2000/svg'
+              d='M192,352H320a8,8,0,0,1,0,16H192a8,8,0,0,1,0-16Zm40-96h-8a8,8,0,1,1,8-8Zm16,16h16v64H248Zm80,120a8.009,8.009,0,0,1-8,8H192a8,8,0,0,1,0-16H320A8.009,8.009,0,0,1,328,392Zm-40,88H224a24.027,24.027,0,0,1-24-24v-8H312v8A24.027,24.027,0,0,1,288,480Zm32-48H192a8,8,0,0,1,0-16H320a8,8,0,0,1,0,16Zm11.2-133.183a39.85,39.85,0,0,0-19.2,34.16V336H280V272h8a24,24,0,1,0-24-24v8H248v-8a24,24,0,1,0-24,24h8v64H200v-3.02a39.95,39.95,0,0,0-18.891-33.973A143.982,143.982,0,0,1,256,32h.011C335.406,32.006,400,96.6,400,176A143.156,143.156,0,0,1,331.2,298.817ZM280,256v-8a8,8,0,1,1,8,8Z'
+              stroke='green'
+              className='dash-movement'
+              stroke-width='5'
+              stroke-linecap='round'
+              data-original='#000000'
+            />
+
+            <path
+              xmlns='http://www.w3.org/2000/svg'
+              d='M256,48h-8a8,8,0,0,0,0,16h8A112.127,112.127,0,0,1,368,176v8a8,8,0,0,0,16,0v-8A128.145,128.145,0,0,0,256,48Z'
+              stroke='red'
+              className='dash-movement'
+              stroke-width='5'
+              stroke-linecap='round'
+              data-original='#000000'
+            />
+          </g>
+        </svg>
+      </div>
     </>
   );
 }
